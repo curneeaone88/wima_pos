@@ -1,0 +1,7 @@
+__pycache__
+Dockerfile
+.git
+.dockerignore
+.gitignore
+.github
+.k8s

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="bca_212" model="account.journal">
+        <field name="name">BCA 188.212.6689</field>
+        <field name="type">bank</field>
+        <field name="code">BCA1</field>
+        <field name="default_account_id" search="[('code', '=', '1121')]"/>
+    </record>
+    <record id="bca_886" model="account.journal">
+        <field name="name">BCA 188.886.6689</field>
+        <field name="type">bank</field>
+        <field name="code">BCA2</field>
+        <field name="default_account_id" search="[('code', '=', '1122')]"/>
+    </record>
+    <record id="bca_676" model="account.journal">
+        <field name="name">BCA USD 188 676 6689</field>
+        <field name="type">bank</field>
+        <field name="code">BCA3</field>
+        <field name="default_account_id" search="[('code', '=', '1123')]"/>
+    </record>
+    <record id="ocbc_689" model="account.journal">
+        <field name="name">OCBC 050800385689</field>
+        <field name="type">bank</field>
+        <field name="code">OCBC</field>
+        <field name="default_account_id" search="[('code', '=', '1131')]"/>
+    </record>
+    <record id="ocbc_689_usd" model="account.journal">
+        <field name="name">OCBC USD 050800385689</field>
+        <field name="type">bank</field>
+        <field name="code">OCBC2</field>
+        <field name="default_account_id" search="[('code', '=', '1133')]"/>
+    </record>
+    <record id="ocbc_899" model="account.journal">
+        <field name="name">OCBC IDR 050800468899</field>
+        <field name="type">bank</field>
+        <field name="code">OCBC3</field>
+        <field name="default_account_id" search="[('code', '=', '1132')]"/>
+    </record>
+    <record id="xendit" model="account.journal">
+        <field name="name">Xendit</field>
+        <field name="type">bank</field>
+        <field name="code">XDT</field>
+        <field name="default_account_id" search="[('code', '=', '1198')]"/>
+        <field name="loss_account_id" search="[('code', '=', '7400')]"/>
+    </record>
+    <record id="kas_jkt" model="account.journal">
+        <field name="name">Kas Kecil Jakarta</field>
+        <field name="type">cash</field>
+        <field name="code">KKJ</field>
+        <field name="default_account_id" search="[('code', '=', '1112')]"/>
+    </record>
+    <record id="kas_sby" model="account.journal">
+        <field name="name">Kas Kecil Surabaya</field>
+        <field name="type">cash</field>
+        <field name="code">KKS</field>
+        <field name="default_account_id" search="[('code', '=', '1111')]"/>
+    </record>
+    <record id="je" model="account.journal">
+        <field name="name">Journal Entry</field>
+        <field name="type">general</field>
+        <field name="code">JE</field>
+    </record>
+    <record id="rlz" model="account.journal">
+        <field name="name">Revenue Realization</field>
+        <field name="type">general</field>
+        <field name="code">RR</field>
+        <field name="default_account_id" search="[('code', '=', '2600')]"/>
+        <field name="balancing_account_id" search="[('code', '=', '1210')]"/>
+    </record>
+    <record id="re" model="account.journal">
+        <field name="name">Reverse Entry</field>
+        <field name="type">general</field>
+        <field name="code">RE</field>
+    </record>
+    <record id="inv_erp_opex" model="account.account.tag">
+        <field name="name">INV.ERP - OPEX</field>
+        <field name="applicability">accounts</field>
+    </record>
+    <record id="inv_erp_cm4" model="account.account.tag">
+        <field name="name">INV.ERP - CM4</field>
+        <field name="applicability">accounts</field>
+    </record>
+    <record id="inv_erp_cm3" model="account.account.tag">
+        <field name="name">INV.ERP - CM3</field>
+        <field name="applicability">accounts</field>
+    </record>
+    <record id="inv_erp_cm2" model="account.account.tag">
+        <field name="name">INV.ERP - CM2</field>
+        <field name="applicability">accounts</field>
+    </record>
+    <record id="inv_rep_oe" model="account.account.tag">
+        <field name="name">INV.REP - OE</field>
+        <field name="applicability">accounts</field>
+    </record>
+    <record id="inv_rep_opex" model="account.account.tag">
+        <field name="name">INV.REP - OPEX</field>
+        <field name="applicability">accounts</field>
+    </record>
+    <record id="inv_rep_cm2" model="account.account.tag">
+        <field name="name">INV.REP - CM2</field>
+        <field name="applicability">accounts</field>
+    </record>
+    <record id="inv_rep_cm3" model="account.account.tag">
+        <field name="name">INV.REP - CM3</field>
+        <field name="applicability">accounts</field>
+    </record>
+    <record id="inv_rep_cm4" model="account.account.tag">
+        <field name="name">INV.REP - CM4</field>
+        <field name="applicability">accounts</field>
+    </record>
+    <record id="cor" model="account.account.tag">
+        <field name="name">COR</field>
+        <field name="applicability">accounts</field>
+    </record>
+    <record id="cl" model="account.account.tag">
+        <field name="name">CL</field>
+        <field name="applicability">accounts</field>
+    </record>
+    <record id="ncl" model="account.account.tag">
+        <field name="name">NCL</field>
+        <field name="applicability">accounts</field>
+    </record>
+    <record id="ebitda" model="account.account.tag">
+        <field name="name">EBITDA</field>
+        <field name="applicability">accounts</field>
+    </record>
+    <record id="a_g" model="account.analytic.account">
+        <field name="name">A&amp;G</field>
+        <field name="code">Administrative &amp; General</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="bd" model="account.analytic.account">
+        <field name="name">BD</field>
+        <field name="code">Business Development</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="corfin" model="account.analytic.account">
+        <field name="name">CORFIN</field>
+        <field name="code">Corporate Finance</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="cpm" model="account.analytic.account">
+        <field name="name">CPM</field>
+        <field name="code">Customer Project Management</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="crm" model="account.analytic.account">
+        <field name="name">CRM</field>
+        <field name="code">Customer Relationship Management</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="csvc" model="account.analytic.account">
+        <field name="name">CSVC</field>
+        <field name="code">Customer Service</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="cscc" model="account.analytic.account">
+        <field name="name">CSCC</field>
+        <field name="code">Customer Success</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="eng" model="account.analytic.account">
+        <field name="name">ENG</field>
+        <field name="code">Engineering</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="fat" model="account.analytic.account">
+        <field name="name">FAT</field>
+        <field name="code">Finance, Accounting &amp; Tax</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="gr" model="account.analytic.account">
+        <field name="name">GROW</field>
+        <field name="code">Growth</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="hr" model="account.analytic.account">
+        <field name="name">HRGA</field>
+        <field name="code">Human Resources &amp; General Affair</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="im" model="account.analytic.account">
+        <field name="name">IMPL</field>
+        <field name="code">Implementer</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="it" model="account.analytic.account">
+        <field name="name">IT</field>
+        <field name="code">Internal IT</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="iot" model="account.analytic.account">
+        <field name="name">IOT</field>
+        <field name="code">Internet of Things</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="lg" model="account.analytic.account">
+        <field name="name">LG</field>
+        <field name="code">Lead Generator</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="lgl" model="account.analytic.account">
+        <field name="name">LGL</field>
+        <field name="code">Legal</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="mkt" model="account.analytic.account">
+        <field name="name">MKT</field>
+        <field name="code">Marketing</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="mr" model="account.analytic.account">
+        <field name="name">MR</field>
+        <field name="code">Market Research</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="omg" model="account.analytic.account">
+        <field name="name">OMG</field>
+        <field name="code">Otto Menara Globalindo</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="prt" model="account.analytic.account">
+        <field name="name">PART</field>
+        <field name="code">Partnership</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="prd" model="account.analytic.account">
+        <field name="name">PROD</field>
+        <field name="code">Product</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="pm" model="account.analytic.account">
+        <field name="name">PM</field>
+        <field name="code">Product Marketing</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="qc" model="account.analytic.account">
+        <field name="name">QC</field>
+        <field name="code">Quality Control</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="rc" model="account.analytic.account">
+        <field name="name">RECR</field>
+        <field name="code">Recruitment</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="ss" model="account.analytic.account">
+        <field name="name">SS</field>
+        <field name="code">Sales Support</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="stg" model="account.analytic.account">
+        <field name="name">STRA</field>
+        <field name="code">Strategy</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="sys" model="account.analytic.account">
+        <field name="name">SYS</field>
+        <field name="code">System</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="tech" model="account.analytic.account">
+        <field name="name">TECH</field>
+        <field name="code">Technician</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="tsm" model="account.analytic.account">
+        <field name="name">TSM</field>
+        <field name="code">Tele Sales Managerial</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+    <record id="tso" model="account.analytic.account">
+        <field name="name">TSO</field>
+        <field name="code">Tele Sales Officer</field>
+        <field name="plan_id" ref="analytic.analytic_plan_projects"/>
+    </record>
+</odoo>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="data_aceh" model="res.country.state">
+            <field name="code">11</field>
+            <field name="name">Aceh</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_sumatera_utara" model="res.country.state">
+            <field name="code">12</field>
+            <field name="name">Sumatera Utara</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_sumatera_barat" model="res.country.state">
+            <field name="code">13</field>
+            <field name="name">Sumatera Barat</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_riau" model="res.country.state">
+            <field name="code">14</field>
+            <field name="name">Riau</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_jambi" model="res.country.state">
+            <field name="code">15</field>
+            <field name="name">Jambi</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_sumatera_selatan" model="res.country.state">
+            <field name="code">16</field>
+            <field name="name">Sumatera Selatan</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_bengkulu" model="res.country.state">
+            <field name="code">17</field>
+            <field name="name">Bengkulu</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_lampung" model="res.country.state">
+            <field name="code">18</field>
+            <field name="name">Lampung</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_kepulauan_bangka_belitung" model="res.country.state">
+            <field name="code">19</field>
+            <field name="name">Kepulauan Bangka Belitung</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_kepulauan_riau" model="res.country.state">
+            <field name="code">21</field>
+            <field name="name">Kepulauan Riau</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_dki_jakarta" model="res.country.state">
+            <field name="code">31</field>
+            <field name="name">Dki Jakarta</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_jawa_barat" model="res.country.state">
+            <field name="code">32</field>
+            <field name="name">Jawa Barat</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_jawa_tengah" model="res.country.state">
+            <field name="code">33</field>
+            <field name="name">Jawa Tengah</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_daerah_istimewa_yogyakarta" model="res.country.state">
+            <field name="code">34</field>
+            <field name="name">Daerah Istimewa Yogyakarta</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_jawa_timur" model="res.country.state">
+            <field name="code">35</field>
+            <field name="name">Jawa Timur</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_banten" model="res.country.state">
+            <field name="code">36</field>
+            <field name="name">Banten</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_bali" model="res.country.state">
+            <field name="code">51</field>
+            <field name="name">Bali</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_nusa_tenggara_barat" model="res.country.state">
+            <field name="code">52</field>
+            <field name="name">Nusa Tenggara Barat</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_nusa_tenggara_timur" model="res.country.state">
+            <field name="code">53</field>
+            <field name="name">Nusa Tenggara Timur</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_kalimantan_barat" model="res.country.state">
+            <field name="code">61</field>
+            <field name="name">Kalimantan Barat</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_kalimantan_tengah" model="res.country.state">
+            <field name="code">62</field>
+            <field name="name">Kalimantan Tengah</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_kalimantan_selatan" model="res.country.state">
+            <field name="code">63</field>
+            <field name="name">Kalimantan Selatan</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_kalimantan_timur" model="res.country.state">
+            <field name="code">64</field>
+            <field name="name">Kalimantan Timur</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_kalimantan_utara" model="res.country.state">
+            <field name="code">65</field>
+            <field name="name">Kalimantan Utara</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_sulawesi_utara" model="res.country.state">
+            <field name="code">71</field>
+            <field name="name">Sulawesi Utara</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_sulawesi_tengah" model="res.country.state">
+            <field name="code">72</field>
+            <field name="name">Sulawesi Tengah</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_sulawesi_selatan" model="res.country.state">
+            <field name="code">73</field>
+            <field name="name">Sulawesi Selatan</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_sulawesi_tenggara" model="res.country.state">
+            <field name="code">74</field>
+            <field name="name">Sulawesi Tenggara</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_gorontalo" model="res.country.state">
+            <field name="code">75</field>
+            <field name="name">Gorontalo</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_sulawesi_barat" model="res.country.state">
+            <field name="code">76</field>
+            <field name="name">Sulawesi Barat</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_maluku" model="res.country.state">
+            <field name="code">81</field>
+            <field name="name">Maluku</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_maluku_utara" model="res.country.state">
+            <field name="code">82</field>
+            <field name="name">Maluku Utara</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_papua" model="res.country.state">
+            <field name="code">91</field>
+            <field name="name">Papua</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_papua_barat" model="res.country.state">
+            <field name="code">92</field>
+            <field name="name">Papua Barat</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_papua_selatan" model="res.country.state">
+            <field name="code">93</field>
+            <field name="name">Papua Selatan</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_papua_tengah" model="res.country.state">
+            <field name="code">94</field>
+            <field name="name">Papua Tengah</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+        <record id="data_papua_pegunungan" model="res.country.state">
+            <field name="code">95</field>
+            <field name="name">Papua Pegunungan</field>
+            <field name="country_id" ref="base.id"/>
+        </record>
+
+    </data>
+</odoo>

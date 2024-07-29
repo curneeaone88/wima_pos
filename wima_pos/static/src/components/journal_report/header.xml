@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="wima_pos.JournalReportHeader" t-inherit="wima_pos.AccountReportHeaderCustomizable">
+        <xpath expr="//thead[@id='table_header']" position="replace"/>
+    </t>
+</templates>

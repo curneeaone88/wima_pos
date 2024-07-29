@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mceasy-erp-pvc
+spec:
+  resources:
+    requests:
+      storage: 25Gi
+  storageClassName: gp2
+  accessModes:
+    - ReadWriteOnce

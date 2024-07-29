@@ -1,0 +1,1155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="external.template" id="template_contract">
+            <field name="name">Template Contract</field>
+            <field name="model_id" ref="model_sale_contract"/>
+            <field name="is_default">True</field>
+            <field name="content" type="html">
+                 <div style="column-count: 2">
+                    <div class="mt-0">
+                        <div class="text-center">
+                            <h5 class="mb-0 fw-bold">PERJANJIAN KERJA SAMA</h5>
+                            <p>{{ object.name }}</p>
+                        </div>
+                        <p>Perjanjian kerja sama ini ("<b>Perjanjian</b>") dibuat oleh dan antara:</p>
+                        <ol>
+                            <li>
+                                <p>
+                                    <b><span class="text-uppercase">{{ object.company_id.name }}</span></b>, suatu perseroan terbatas yang didirikan berdasarkan dan tunduk pada hukum negara Republik Indonesia, yang memiliki alamat terdaftar di Gedung Sinar Mas Land Plaza Lantai 8 #801- 803 Jl. Pemuda no. 60-70, Surabaya, Jawa Timur, dalam hal ini diwakili secara sah oleh <b>Andi Setiadi</b>, dalam kapasitasnya sebagai Chief Business Officer/Kuasa Direksi, selanjutnya disebut sebagai “<b>PIHAK PERTAMA</b>”; dan
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>{{ object.partner_id.name }}</b> suatu perseroan terbatas yang didirikan berdasarkan dan tunduk pada hukum negara Republik Indonesia, yang memiliki alamat terdaftar di {{ object.partner_id.contact_address }} dalam hal ini diwakili secara sah oleh <b>{{ object.partner_pic_id.name }}</b>, dalam kapasitasnya sebagai Direktur, bertindak untuk dan atas nama <b>{{ object.partner_id.name }}</b> selanjutnya disebut sebagai “<b>PIHAK KEDUA</b>”.
+                                </p>
+                            </li>
+                        </ol>
+                        <p>PIHAK PERTAMA dan PIHAK KEDUA, masing-masing disebut sebagai “<b>PIHAK</b>” dan secara bersama-sama disebut sebagai “<b>PARA PIHAK</b>”.</p>
+                    </div>
+                    <div class="mt-5">
+                        <div class="text-center">
+                            <p class="fw-bold mb-0">Pasal 2</p>
+                            <p class="fw-bold">JANGKA WAKTU</p>
+                        </div>
+                        <ol>
+                            <li>
+                                <p>
+                                    Perjanjian ini dimulai sejak tanggal ditanda tanganinya Quotation oleh PIHAK KEDUA dan berlaku sesuai dengan masa kontrak yang tertera pada Quotation.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Perjanjian ini akan diperpanjang secara otomatis sampai dengan diakhiri secara tertulis oleh PARA PIHAK. Seluruh syarat dan ketentuan Perjanjian ini akan tetap berlaku pada setiap perpanjangan.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="mt-5">
+                        <div class="text-center">
+                            <p class="fw-bold mb-0">Pasal 3</p>
+                            <p class="fw-bold">HARGA DAN PEMBAYARAN</p>
+                        </div>
+                        <ol>
+                            <li>
+                                <p>
+                                    Jenis dan harga Produk yang disepakati, dapat dilihat lebih rinci dalam <b>Quotation</b> Perjanjian ini.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    PIHAK PERTAMA akan mengirimkan Proforma Invoice kepada PIHAK KEDUA yang mencantumkan jumlah total yang perlu dibayarkan beserta instruksi pembayaran melalui sebuah sistem payment gateway yang telah ditentukan dan akan menjembatani transaksi PARA PIHAK.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Apabila pembayaran dimuka secara penuh telah dilakukan kepada PIHAK PERTAMA oleh PIHAK KEDUA, dan selanjutnya PIHAK KEDUA berniat untuk mengakhiri Perjanjian ini, maka PIHAK KEDUA setuju bahwa pembayaran dimuka secara penuh yang telah dilakukan akan diperhitungkan sebagai kompensasi ganti kerugian untuk PIHAK PERTAMA, dengan ketentuan pembayaran dimuka secara penuh tersebut telah dilakukan untuk keseluruhan Jangka Waktu ataupun keseluruhan Jangka Waktu Perpanjangan yang sedang berjalan.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Pajak-pajak yang timbul sehubungan dengan Perjanjian ini akan menjadi tanggung jawab dari masing-masing Pihak sesuai dengan peraturan perpajakan yang berlaku di Republik Indonesia.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Apabila tanggal jatuh tempo pembayaran jatuh pada hari libur (termasuk hari Sabtu dan Minggu di Indonesia) atau hari libur Nasional yang ditetapkan oleh pemerintah Indonesia, maka pembayaran harus dilakukan pada hari kerja sebelumnya.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Apabila terjadi pembayaran melewati tanggal jatuh tempo, PIHAK PERTAMA berhak untuk menghentikan penyediaan dan/atau penyewaan Produk Hardware dan/atau layanan langganan Produk Software kepada PIHAK KEDUA, dengan tidak mengurangi kewajiban pelunasan pembayaran oleh PIHAK KEDUA.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Pembayaran yang dilakukan oleh PIHAK KEDUA kepada PIHAK PERTAMA dilakukan hanya melalui nomor rekening sebagaimana tercantum dalam pesanan pembelian sebagaimana terlampir dalam <b>Quotation</b> Perjanjian ini. Segala bentuk pembayaran yang dilakukan oleh PIHAK KEDUA ke nomor rekening selain nomor rekening PIHAK PERTAMA yang tercantum dalam pesanan pembelian sebagaimana terlampir dalam <b>Quotation</b> Perjanjian ini bukan merupakan tanggung jawab PIHAK PERTAMA.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Apabila PIHAK KEDUA melakukan pemasangan/instalasi Produk Hardware sendiri sebagaimana dimaksud dalam Pasal 6 Perjanjian ini, maka pembayaran harus dilakukan terlebih dahulu oleh PIHAK KEDUA selanjutnya PIHAK PERTAMA akan mengirimkan Produk Hardware kepada PIHAK KEDUA yang dibuktikan melalui ditandatanganinya berita acara serah terima oleh PIHAK KEDUA atau informasi tertulis dari kurir pengiriman kepada PIHAK KEDUA. Hal-hal selain pengaturan penagihan berdasarkan ayat ini akan berlaku bagi PIHAK KEDUA sepanjang relevan.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="mt-5">
+                        <div class="text-center">
+                            <p class="fw-bold mb-0">Pasal 4</p>
+                            <p class="fw-bold">HAK DAN KEWAJIBAN PARA PIHAK</p>
+                        </div>
+                        <ol>
+                            <li>
+                                <p>
+                                    PIHAK PERTAMA wajib menyediakan Produk Hardware dan layanan berlangganan Produk Software kepada PIHAK KEDUA sesuai dengan tipe kerja sama yang dipilih oleh PIHAK KEDUA berdasarkan pesanan pembelian dalam Quotation  Perjanjian ini.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    PIHAK KEDUA wajib memenuhi kewajiban pembayaran serta denda-denda (apabila ada) atau kewajiban pembayaran lainnya sebagaimana ditentukan dalam Perjanjian.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    PIHAK KEDUA yang memilih opsi Produk yang disebutkan dalam Pasal 1 ayat 3 (iii) dan (iv) wajib memelihara dan menjaga kondisi Produk untuk memastikan kinerja yang optimal dan bersedia mengganti kerugian apabila terjadi kerusakan yang diakibatkan oleh kesalahan baik yang disengaja maupun yang tidak disengaja oleh PIHAK KEDUA. Apabila terjadi kerusakan dan/atau kehilangan pada Produk yang diakibatkan oleh kesalahan PIHAK KEDUA, PIHAK KEDUA akan dibebankan biaya penggantian kerugian per Produk sebagaimana tercantum pada lampiran After Sales Services Point 8 atau atas kesepakatan PARA PIHAK.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    PIHAK KEDUA setuju untuk memberikan izin pemasangan Produk Hardware dan/atau Produk Software kepada PIHAK PERTAMA, termasuk namun tidak terbatas pada pelaksanaan interface terhadap seluruh atau sebagian aset PIHAK KEDUA dan/atau pihak lainnya.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Selama Jangka Waktu atau Jangka Waktu Perpanjangan , PIHAK KEDUA tidak berhak untuk:
+                                </p>
+                                <ol class="list-lower-alpha">
+                                    <li>
+                                        <p>
+                                            mensublisensikan, menyewakan, menjual, meminjamkan atau mendistribusikan Produk kepada pihak manapun dengan alasan apapun;
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            menggunakan Produk selain sebagaimana yang diatur dalam Perjanjian ini;
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            menyalin, menerjemahkan, membongkar, mengurai atau merekayasa ulang Produk, termasuk akan tetapi tidak terbatas pada membuat atau berusaha untuk membuat sandi sumber dari sandi Produk Hardware dan/atau Produk Software;
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            melakukan modifikasi atas Produk Hardware tanpa persetujuan tertulis dari PIHAK PERTAMA.
+                                        </p>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>
+                                    PIHAK KEDUA tidak diperbolehkan menggunakan Produk untuk maksud-maksud amoral, tindakan kriminal dan aktivitas ilegal yang tidak sesuai dengan peraturan perundangan yang berlaku di Indonesia.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Apabila PIHAK KEDUA memutuskan untuk tidak melanjutkan Kerja Sama, wajib mengembalikan seluruh Produk milik PIHAK PERTAMA yang dipasang/diinstalasi selambat-lambatnya 30 (tiga puluh) hari kalender sejak notifikasi pemutusan diterima PIHAK PERTAMA dalam keadaan baik dan juga wajib mempermudah akses bagi PIHAK PERTAMA dalam penarikan kembali Produk tersebut.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <p class="page-break"></p>
+                    <div class="mt-5">
+                        <div class="text-center">
+                            <p class="fw-bold mb-0">Pasal 5</p>
+                            <p class="fw-bold">PEMBATASAN TANGGUNG JAWAB</p>
+                        </div>
+                        <p>
+                            PIHAK KEDUA bersedia untuk melepaskan tanggung jawab PIHAK PERTAMA, afiliasi-afiliasi PIHAK PERTAMA beserta karyawannya terhadap segala kerugian, klaim, proses hukum, pengeluaran, kerusakan, kewajiban, atau biaya yang timbul akibat dari penggunaan Produk yang tidak sesuai dengan maksud dan tujuan penggunaan yang tertera pada pemesanan pembelian sebagaimana yang dilampirkan pada <b>Quotation</b> Perjanjian ini dan ketentuan-ketentuan dalam Perjanjian ini.
+                        </p>
+                    </div>
+                    <div class="mt-5">
+                        <div class="text-center">
+                            <p class="fw-bold mb-0">Pasal 6</p>
+                            <p class="fw-bold">PEMASANGAN/INSTALASI PRODUK HARDWARE OLEH PIHAK KEDUA</p>
+                        </div>
+                        <ol>
+                            <li>
+                                <p>
+                                    PIHAK KEDUA dapat melakukan pemasangan/instalasi Produk Hardware sendiri apabila telah mendapatkan persetujuan tertulis dari PIHAK PERTAMA.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Apabila PIHAK KEDUA bermaksud untuk melakukan pemasangan/instalasi Produk Hardware tanpa bantuan dari PIHAK PERTAMA, maka PIHAK KEDUA harus memperhatikan hal-hal berikut ini:
+                                </p>
+                                <ol class="list-lower-alpha">
+                                    <li>
+                                        <p>
+                                            Dalam hal pemasangan/instalasi, PIHAK KEDUA wajib mengikuti prosedur instruksi pekerjaan pemasangan  Produk Hardware sebagaimana terdapat dalam Lampiran  Perjanjian ini;
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Terlepas dari poin a di atas, setiap pemasangan/instalasi Produk Hardware yang dilakukan oleh PIHAK KEDUA dengan alasan apa pun berada di luar tanggung jawab PIHAK PERTAMA. Oleh karenanya, PIHAK KEDUA harus seluruhnya bertanggung jawab pada setiap kesalahan pemasangan Produk Hardware, disfungsi Produk Hardware, atau kerusakan Produk Hardware (yang semata-mata disebabkan oleh pemasangan PIHAK KEDUA dan bukan karena cacat atau kerusakan bawaan pada Produk Hardware), kerusakan atau kehilangan kendaraan akibat kesalahan pemasangan/instalasi Produk Hardware yang menyebabkan Produk Hardware tidak bekerja sesuai fungsinya atau sebab-sebab merugikan lainnya yang timbul karena pemasangan/instalasi Produk Hardware yang dilakukan oleh PIHAK KEDUA; dan
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Setelah pemasangan/instalasi Produk Hardware selesai dilakukan oleh PIHAK KEDUA,  maka PIHAK PERTAMA akan melakukan aktivasi Produk Hardware selambat-lambatnya 3 (tiga) x 24 (dua puluh empat) jam pada hari kerja setelah PIHAK KEDUA menyampaikan permintaan aktivasi Produk Hardware yang dipasangnya secara tertulis kepada PIHAK PERTAMA
+                                        </p>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="mt-5">
+                        <div class="text-center">
+                            <p class="fw-bold mb-0">Pasal 7</p>
+                            <p class="fw-bold">PERNYATAAN DAN JAMINAN</p>
+                        </div>
+                        <p>Masing-masing PIHAK dengan ini menyatakan dan menjamin kepada PIHAK lainnya atas hal-hal sebagai berikut:</p>
+                        <ol>
+                            <li>
+                                <p>
+                                    PIHAK-nya adalah perusahaan atau badan hukum yang didirikan berdasarkan hukum negara Republik Indonesia dan telah memiliki seluruh persetujuan, izin serta pendaftaran yang dipersyaratkan oleh ketentuan hukum yang berlaku, serta tidak sedang dicabut kewenangan bertindaknya menurut hukum yang berlaku untuk menjalankan usahanya, termasuk namun tidak terbatas kepada pembuatan, penandatanganan serta pelaksanaan Perjanjian ini dan dokumen lain yang terkait dengan Perjanjian ini;
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    PARA PIHAK menjamin bahwa dokumen legalitas masing-masing PIHAK yang diberikan satu sama lain merupakan yang resmi, asli, sah, masih berlaku dan setiap informasi yang tercantum dalam dokumen tersebut adalah benar, sesuai dengan keadaan sebenarnya dan bukan merupakan rekayasa maupun tipu muslihat atau kebohongan;
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Pelaksanaan hak dan kewajiban berdasarkan Perjanjian ini tidak bertentangan dengan anggaran dasar serta tidak melanggar ketentuan peraturan perundang-undangan yang berlaku yang wajib ditaati oleh masing-masing PIHAK;
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Masing-masing PIHAK telah mengambil semua tindakan yang diperlukan sesuai dengan ketentuan anggaran dasar masing-masing PIHAK, diantaranya mengenai kewenangan untuk melaksanakan Perjanjian ini dan subjek hukum yang menandatangani Perjanjian ini telah diberi wewenang untuk berbuat demikian untuk dan atas nama masing-masing PIHAK;
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Masing-masing PIHAK telah mendapatkan semua izin, lisensi, dan persetujuan yang diperlukan dalam melaksanakan kewajibannya berdasarkan Perjanjian ini;
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Masing-masing PIHAK tunduk dan akan melaksanakan seluruh ketentuan dalam Perjanjian ini;
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Penandatanganan, penyerahan, dan pelaksanaan Perjanjian ini tidak akan melanggar setiap perjanjian dimana masing-masing PIHAK merupakan pihak di dalamnya atau dimana masing-masing PIHAK terikat; dan tidak akan melanggar, bertentangan dengan, atau melanggar setiap hukum, norma, surat perintah pengadilan, keputusan, ketetapan atau peraturan apapun yang mengikat masing-masing PIHAK atau dimana kegiatan usaha, properti atau aset masing-masing dari Pihak terikat;
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Pada tanggal Perjanjian ini ditandatangani, tidak ada kelalaian ataupun potensi kelalaian yang timbul atau akan timbul sebagai akibat dari penandatanganan Perjanjian ini;
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Setiap PIHAK tidak dalam keadaan pailit, sengketa atau dalam keadaan dijaminkan, atau kegiatan usahanya tidak sedang dihentikan yang dapat berpengaruh secara material terhadap kelangsungan Perjanjian ini; dan
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Seluruh pernyataan dan jaminan yang dibuat dan/atau diberikan oleh masing-masing PIHAK dalam Perjanjian ini adalah benar dan tidak menyesatkan, dan tidak ada fakta yang disembunyikan oleh masing-masing PIHAK, yang apabila fakta tersebut terungkap dapat mempengaruhi pelaksanaan Perjanjian ini.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="mt-5">
+                        <div class="text-center">
+                            <p class="fw-bold mb-0">Pasal 8</p>
+                            <p class="fw-bold">PENGAKHIRAN PERJANJIAN</p>
+                        </div>
+                        <ol>
+                            <li>
+                                <p>
+                                    PIHAK PERTAMA tidak dapat mengakhiri Perjanjian ini secara sepihak dan seketika tanpa keharusan untuk menjelaskan alasan pengakhiran kepada PIHAK KEDUA.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    PIHAK KEDUA tidak dapat mengakhiri Perjanjian ini secara sepihak, namun PIHAK KEDUA dapat mengajukan pengakhiran Perjanjian ini kepada PIHAK PERTAMA dengan memberikan permohonan tertulis 30 (tiga puluh) hari kerja sebelumnya yang menyebutkan alasan pengakhiran Perjanjian kepada PIHAK PERTAMA.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Akibat berakhirnya atau pengakhiran Perjanjian ini sebagaimana diatur dalam Pasal 8 ayat (2) di atas, PIHAK PERTAMA tidak berkewajiban untuk mengembalikan seluruh atau sebagian biaya Produk yang telah dibayarkan oleh PIHAK KEDUA.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Sehubungan dengan pengakhiran Perjanjian ini, PARA PIHAK sepakat untuk mengesampingkan ketentuan yang terdapat dalam Pasal 1266 dan 1267 Kitab Undang-Undang Hukum Perdata sepanjang dibutuhkan persetujuan dari pengadilan untuk melakukan pengakhiran Perjanjian ini. Pengakhiran ini tidak akan melepaskan setiap Pihak dari segala kewajiban atau tanggung jawab Pihak tersebut dari segala hal yang disanggupi atau persyaratan yang belum dipenuhi, dikaji atau dilaksanakan oleh Pihak tersebut sebelum pengakhiran.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Perjanjian ini akan berakhir dengan sendirinya apabila salah satu pihak dinyatakan pailit, baik diwajibkan maupun secara sukarela, atau meminta penundaan pembayaran, atau terjadi pengalihan aset untuk kepentingan kreditur, atau mengalami kerugian atau eksekusi terhadap properti atau asetnya yang berbiaya atau secara keseluruhan.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <p class="page-break"></p>
+                    <div class="mt-5">
+                        <div class="text-center">
+                            <p class="fw-bold mb-0">Pasal 9</p>
+                            <p class="fw-bold">KERAHASIAAN DAN PERLINDUNGAN DATA PRIBADI</p>
+                        </div>
+                        <ol>
+                            <li>
+                                <p>
+                                    PARA PIHAK sepakat untuk menghormati, menyimpan dan menjaga dengan sebaik-baiknya kerahasiaan dari setiap data, informasi, dokumen dan korespondensi dari masing-masing Pihak terkait dengan Perjanjian ini, termasuk dan tidak terbatas pada harga, fitur Produk dalam Perjanjian ini.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Kewajiban kerahasiaan tidak berlaku untuk informasi atau dokumen yang:
+                                </p>
+                                <ol class="list-lower-alpha">
+                                    <li>
+                                        <p>
+                                            menjadi domain publik yang bukan dikarenakan pelanggaran; atau
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            harus diungkapkan kepada suatu otoritas pemerintahan, pengadilan, arbiter atau pengadilan administratif atau ahli dalam rangka proses persidangan atau penyelesaian sengketa sebelum pengungkapan tersebut; atau
+                                        </p>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>
+                                    Atas segala hal yang terkait dengan penggunaan Produk, PIHAK KEDUA memberikan persetujuan kepada PIHAK PERTAMA untuk:
+                                </p>
+                                <ol class="list-lower-alpha">
+                                    <li>
+                                        <p>
+                                            memperoleh, mengakses, dan menyimpan data yang dimasukkan oleh PIHAK KEDUA ke dalam Produk dalam rangka penggunaan Produk  secara optimal;
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            menghapus segala data yang diunggah PIHAK KEDUA yang bertentangan dengan Perjanjian ini dan hukum yang berlaku di Indonesia;
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            memberikan data kepada affiliasi PIHAK PERTAMA hanya apabila diperlukan, untuk melakukan aktivitas yang diperlukan dalam mengoptimalkan penggunaan Produk ; dan
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            mengirimkan pengumuman layanan, pesan administratif, dan informasi lainnya kepada PIHAK KEDUA.
+                                        </p>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>
+                                    PARA PIHAK harus melakukan semua langkah yang wajar sesuai dengan peraturan perundang-undangan yang berlaku di Indonesia untuk menjaga kerahasiaan segala data dan informasi, kecuali telah mendapatkan persetujuan tertulis dari salah satu Pihak.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Dalam hal perolehan, pengolahan/penggunaan, penyimpanan, penyebarluasan, dan pemusnahan data pribadi PARA PIHAK akan selalu mematuhi aturan dan ketentuan yang diatur dalam peraturan perundang-undangan yang berlaku termasuk Undang-Undang No. 27 Tahun 2022 tentang Perlindungan Data Pribadi yang berlaku di Indonesia.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Ketentuan dalam Pasal ini akan tetap berlaku setelah berakhirnya atau diakhirinya Perjanjian ini karena sebab apapun juga.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="mt-5">
+                        <div class="text-center">
+                            <p class="fw-bold mb-0">Pasal 10</p>
+                            <p class="fw-bold">WANPRESTASI</p>
+                        </div>
+                        <ol>
+                            <li>
+                                <p>
+                                    PARA PIHAK sepakat bahwa salah satu Pihak dianggap telah melakukan tindakan ingkar janji dan/atau lalai jika salah satu atau lebih peristiwa di bawah ini terjadi:
+                                </p>
+                                <ol class="list-lower-alpha">
+                                    <li>
+                                        <p>
+                                            Salah satu Pihak melanggar atau tidak memenuhi salah satu atau beberapa ketentuan dalam Perjanjian ini;
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Salah satu Pihak melakukan sesuai isi Perjanjian namun tidak tepat waktu atau tidak sesuai dengan jangka waktu yang diberikan dalam Perjanjian ini.
+                                        </p>
+                                    </li>
+                                </ol>
+                                <p>Dimana Pihak yang melanggar tersebut tidak segera memperbaiki kesalahannya dalam waktu 7 (tujuh) Hari Kerja setelah dilakukan pemberitahuan tertulis oleh Pihak yang dilanggar, selanjutnya disebut “<b>Wanprestasi</b>”.</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Pihak yang melakukan Wanprestasi wajib memberikan ganti kerugian atas kerugian langsung dan nyata yang diderita oleh Pihak lainnya yang disebabkan oleh Wanprestasi tersebut.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Penggantian kerugian sebagaimana diatur di atas tidak menghapuskan hak Pihak lain untuk mencari pemulihan lain sesuai dengan peraturan perundang-undangan yang berlaku.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="mt-5">
+                        <div class="text-center">
+                            <p class="fw-bold mb-0">Pasal 11</p>
+                            <p class="fw-bold">KEADAAN KAHAR</p>
+                        </div>
+                        <ol>
+                            <li>
+                                <p>
+                                    PARA PIHAK tidak bertanggung jawab dalam hal masing-masing pihak tidak dapat melakukan kewajibannya berdasarkan Perjanjian ini karena suatu peristiwa keadaan kahar, yaitu setiap kejadian yang terjadi diluar kekuasaan dan kendali Pihak tersebut, antara lain banjir, gempa bumi, kebakaran, tsunami, badai, angin topan, tanah longsor, bencana alam, teroris, kudeta, peperangan baik yang diumumkan atau tidak diumumkan, pemogokan massal, kebijakan dan tindakan Pemerintah Republik Indonesia terutama di bidang moneter dan fiskal, tindakan penguasa lainnya, huru-hara massal, kekacauan umum, tindakan militer, pemogokan, pemblokiran atau penutupan tempat-tempat kerja (lock-down), epidemi, pandemi dan kejadian lain-lain yang secara hukum dapat digolongkan kejadian dalam keadaan kahar untuk selanjutnya disebut sebagai ”<b>Keadaan Kahar</b>”.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Pihak yang terkena Keadaan Kahar harus memberikan pemberitahuan tertulis kepada pihak lainnya mengenai Keadaan Kahar dalam jangka waktu 7 (tujuh) hari kalender dengan menyertakan analisis tentang perkiraan dampak dan lama waktu berlangsungnya Keadaan Kahar. Setelah pemberitahuan tersebut, seluruh kewajiban pihak yang terdampak Keadaan Kahar berdasarkan Perjanjian ini akan dengan segera tertunda, dan pihak tersebut harus melakukan segala tindakan semaksimal mungkin untuk melanjutkan kembali kinerja dengan sesegera mungkin. Keadaan Kahar ini harus didukung dengan bukti-bukti yang dan didukung dengan keterangan yang dibuat dan dikeluarkan oleh instansi yang berwenang.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Kelalaian menyampaikan pemberitahuan Keadaan Kahar sebagaimana dimaksud dalam Pasal di atas, menyebabkan peristiwa tersebut tidak dapat dikategorikan sebagai Keadaan Kahar dan Pihak yang tidak melaksanakan kewajibannya tersebut dianggap lalai melaksanakan kewajibannya berdasarkan Perjanjian ini.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Ketika Keadaan Kahar berhenti, Perjanjian ini akan terus berlaku penuh selama Jangka Waktu atau Jangka Waktu Perpanjangan yang masih tersisa.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Apabila Keadaan Memaksa melampaui 3 (tiga) bulan, masing-masing Pihak berhak untuk mengakhiri Perjanjian tanpa ada tanggung jawab kepada Pihak yang lain. Pengakhiran tersebut tidak akan memberikan hak kepada Pihak manapun untuk mengklaim kerugian apapun.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="mt-5">
+                        <div class="text-center">
+                            <p class="fw-bold mb-0">Pasal 12</p>
+                            <p class="fw-bold">HUKUM YANG BERLAKU DAN PENYELESAIAN PERSELISIHAN</p>
+                        </div>
+                        <ol>
+                            <li>
+                                <p>
+                                    Perjanjian ini diatur oleh dan ditafsirkan berdasarkan hukum Negara Kesatuan Republik Indonesia.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Para Pihak sepakat apabila timbul sengketa dari atau sehubungan dengan Perjanjian ini, termasuk tapi tidak terbatas pada setiap sengketa mengenai keberadaan, keabsahan, pengakhiran hak atau kewajiban dari suatu Pihak ("<b>Sengketa</b>"), Para Pihak terlebih dahulu akan berupaya untuk menyelesaikan Sengketa tersebut dengan cara musyawarah untuk mufakat oleh Para Pihak yang didasarkan pada itikad baik dalam waktu 30 (tiga puluh) hari kalender sejak diterimanya suatu pemberitahuan tertulis mengenai adanya Sengketa oleh salah satu Pihak dari Pihak lainnya.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Para Pihak setuju bahwa setiap Sengketa yang tidak dapat diselesaikan secara musyawarah untuk mufakat dalam waktu 30 (tiga puluh) hari kalender sesuai dengan ketentuan Pasal 12 ayat (2) di atas, akan diselesaikan melalui Pengadilan Negeri Jakarta Pusat.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <p class="page-break"></p>
+                    <div class="mt-5">
+                        <div class="text-center">
+                            <p class="fw-bold mb-0">Pasal 13</p>
+                            <p class="fw-bold">HAK ATAS KEKAYAAN INTELEKTUAL</p>
+                        </div>
+                        <ol>
+                            <li>
+                                <p>
+                                    PIHAK KEDUA mengakui bahwa PIHAK PERTAMA adalah dan tetap menjadi pemilik dari seluruh kekayaan intelektual atas Produk, termasuk namun tidak terbatas pada hak cipta, hak atas bank data, hak merek, hak paten, dan rahasia dagang (“<b>HAKI</b>”).
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Penggunaan Produk oleh PIHAK KEDUA bukan merupakan pengalihan kepemilikan atas HAKI maupun pengalihan kepemilikan atas hak lainnya yang melekat pada Produk kepada pihak manapun termasuk kepada PIHAK KEDUA.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="mt-5">
+                        <div class="text-center">
+                            <p class="fw-bold mb-0">Pasal 14</p>
+                            <p class="fw-bold">LAIN-LAIN</p>
+                        </div>
+                        <ol>
+                            <li>
+                                <p>
+                                    <b>Lampiran</b>. Seluruh lampiran dan Quotation yang telah disepakati oleh Para Pihak dalam Perjanjian ini menjadi satu kesatuan yang tidak terpisahkan dari Perjanjian ini dan dalam pelaksanaannya tidak dapat berdiri sendiri.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Adendum</b>. Setiap hal yang belum ditentukan atau disepakati oleh Para Pihak dalam Perjanjian ini dapat dibuat dan ditentukan di kemudian hari secara tertulis dan mengikat Para Pihak sebagai adendum dari Perjanjian ini. Adendum tersebut merupakan dokumen yang mempunyai kekuatan hukum yang sama dengan Perjanjian ini.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Perubahan</b>. Masing-masing pihak dapat mengajukan usulan perubahan Perjanjian ini dengan memberikan usulan perubahan paling lambat 10 (sepuluh) hari kerja sebelum tanggal berlakunya perubahan. Perubahan terhadap Perjanjian ini hanya akan dibuat secara tertulis dengan persetujuan Para Pihak dan akan dianggap berlaku setelah perubahan tersebut ditandatangani oleh Para Pihak.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Pengalihan</b>. Para Pihak tidak diperbolehkan untuk mengalihkan atau memindahtangankan seluruh atau sebagian dari hak atau kewajibannya dalam Perjanjian ini tanpa persetujuan tertulis dari Pihak lainnya.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Keseluruhan Perjanjian</b>. Perjanjian ini termasuk setiap lampiran dan/atau quotation dan/atau perubahan dan/atau adendum yang terkait dengan Perjanjian ini merupakan suatu kesatuan, kesepakatan yang lengkap dari Para Pihak, bagian yang tidak terpisahkan dan merupakan pernyataan lengkap dan eksklusif mengenai ketentuan-ketentuan dari segala sesuatu yang disepakati oleh Para Pihak. Perjanjian ini menggantikan setiap dan seluruh perjanjian-perjanjian, nota kesepakatan, kesepakatan, dokumen-dokumen lainnya yang sebelumnya ditandatangani maupun kesepakatan lisan antara Para Pihak sehubungan dengan ruang lingkup Perjanjian ini, kecuali dokumen-dokumen sebelumnya yang dilampirkan dalam Perjanjian ini.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Korespondensi</b>. Setiap pemberitahuan, persetujuan, pengesampingan dan komunikasi lain yang diberikan atau dibuat berdasarkan Perjanjian ini yang diperlukan atau diizinkan untuk diberikan oleh salah satu pihak berdasarkan Perjanjian ini harus dibuat dan disampaikan secara tertulis baik melalui, faksimile, surat pos maupun surat elektronik, serta ditandatangani oleh atau atas nama Pihak yang memberikan kepada Pihak lainnya.
+                                </p>
+                                <p>Korespondensi tersebut akan dianggap telah disampaikan apabila:</p>
+                                <ol class="list-lower-alpha">
+                                    <li>
+                                        <p>
+                                            terdapat tanda terima saat diserahkan langsung kepada alamat yang bersangkutan;
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            dikirim melalui faksimile ke nomor faksimile  dan/atau alamat surel Pihak penerima yang tercantum dalam Perjanjian ini, dokumen asli yang bersangkutan harus tetap dikirimkan.
+                                        </p>
+                                    </li>
+                                </ol>
+                                <p class="page-break"></p>
+                                <p>Berikut adalah rincian korespondensi yang diakui dalam Perjanjian ini:</p>
+                                <ul class="rincian_korespondensi">
+                                    <li>
+                                        <b>
+                                            <span class="text-uppercase">
+                                                {{ object.company_id.name }}
+                                            </span>
+                                        </b>
+                                        <table class="table table-sm table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        Alamat
+                                                    </td>
+                                                    <td style="width: 10px">
+                                                        :
+                                                    </td>
+                                                    <td>
+                                                        Gedung Sinar Mas Land Plaza Lantai 8 #801-803 Jl. Pemuda no. 60-70, Surabaya, Jawa Timur
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Telepon
+                                                    </td>
+                                                    <td>
+                                                        :
+                                                    </td>
+                                                    <td>
+                                                        (031) 992 53933
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Surel
+                                                    </td>
+                                                    <td>
+                                                        :
+                                                    </td>
+                                                    <td>
+                                                        <a href="mailto:sales@mceasy.co.id">sales@mceasy.co.id</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Untuk perhatian
+                                                    </td>
+                                                    <td>
+                                                        :
+                                                    </td>
+                                                    <td>
+                                                        Andi Setiadi
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </li>
+                                    <li>
+                                        <b>{{ object.partner_id.name }}</b>
+                                        <table class="table table-sm table-borderless">
+                                            <tr>
+                                                <td style="width: 150px">
+                                                    Alamat
+                                                </td>
+                                                <td style="width: 10px">
+                                                    :
+                                                </td>
+                                                <td>
+                                                    {{ object.partner_id.contact_address or '-' }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Telepon
+                                                </td>
+                                                <td>
+                                                    :
+                                                </td>
+                                                <td>
+                                                    {{ object.partner_id.phone or '-'}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Faksimile
+                                                </td>
+                                                <td>
+                                                    :
+                                                </td>
+                                                <td>
+                                                    -
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Surel
+                                                </td>
+                                                <td>
+                                                    :
+                                                </td>
+                                                <td>
+                                                    <a href="mailto:{{ object.partner_id.email or '' }}">{{ object.partner_id.email or '-' }}</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Untuk perhatian
+                                                </td>
+                                                <td>
+                                                    :
+                                                </td>
+                                                <td>
+                                                    {{ object.partner_pic_id.name or '-' }}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </li>
+                                </ul>
+                                <p>
+                                    Apabila salah satu Pihak mengganti/mengubah informasi korespondensinya, maka Pihak yang bersangkutan harus memberitahukan kepada Pihak lainnya segera setelah adanya penggantian/perubahan tersebut kepada Pihak lainnya dengan cara apa pun. Perubahan akan dianggap efektif setelah 7 (tujuh) hari terhitung sejak tanggal diterimanya pemberitahuan perubahan tersebut.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Tanda Tangan</b>. Perjanjian ini harus ditandatangani secara basah. Penandatanganan, pemindaian (scanned) dan/atau transmisi secara elektronik  atas Perjanjian ini akan dianggap sebagai tanda tangan asli, dan tanda tangan yang dipindai (scanned) tersebut memiliki kekuatan hukum yang sama dengan tanda tangan asli, sepanjang tanda tangan tersebut dilakukan sesuai dengan ketentuan dan peraturan yang berlaku di Republik Indonesia.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Rangkap</b>. Perjanjian ini juga dapat dibuat dan ditandatangani dalam beberapa rangkap, apabila dibuat dalam beberapa rangkap, masing-masing rangkap apabila digabungan akan membentuk satu perjanjian yang asli, utuh dan sah.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="mt-5">
+                    </div>
+                </div>
+                <div class="col-12 text-justify">
+                    <p>Demikian Para Pihak telah sepakat dan Perjanjian ini ditandatangani oleh pejabat dari masing-masing Pihak yang secara sah dan berwenang pada hari, bulan dan tahun sebagaimana yang tertera pada bagian awal Perjanjian ini, dalam dua rangkap asli yang masing-masing bermeterai cukup dan berkekuatan hukum yang sama dan masing-masing diterima oleh setiap Pihak.</p>
+                    <table class="table table-sm table-borderless text-center fw-bold mt-5">
+                        <tr>
+                            <td class="w-50">
+                                PIHAK PERTAMA
+                            </td>
+                            <td class="w-50">
+                                PIHAK KEDUA
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="w-50">
+                                <span class="text-uppercase">
+                                    {{ object.company_id.name }}
+                                </span>
+                            </td>
+                            <td class="w-50">
+                                {{ object.partner_id.name }}
+                            </td>
+                        </tr>
+                        <tr style="height: 125px;">
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="w-50">
+                                <u>
+                                    Andi Setiadi
+                                </u>
+                            </td>
+                            <td class="w-50">
+                                <u>
+                                    {{ object.partner_pic_id.name }}
+                                </u>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="w-50">
+                                Chief Bussines Office / Kuasa Direksi
+                            </td>
+                            <td class="w-50">
+                                Direktur
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-12">
+                    <p class="page-break"></p>
+                    <p class="text-center fw-bold mb-0">LAMPIRAN</p>
+                    <p class="text-center fw-bold">After Sales Service</p>
+                    <table class="table table-sm" id="after_sale">
+                        <tr>
+                            <th>
+                                No
+                            </th>
+                            <th>
+                                Service
+                            </th>
+                            <th>
+                                Explanation
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                Customer Service
+                            </td>
+                            <td>
+                                <ol>
+                                    <li>
+                                        <p>
+                                            Software issue akan dibantu secara langsung melalui team customer service McEasy dengan:
+                                        </p>
+                                        <ul>
+                                            <li>
+                                                <p>
+                                                    First time response &lt;30 minutes (working hours 8am‐9pm)
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    First time response max. within 8 hours (non‐working hours)
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    SLA 1 x 12 jam (untuk jaringan server)
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    SLA 3 x 24 jam (untuk software bug)
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Hardware issue akan dibantu pengecekan oleh team technical McEasy dengan :
+                                        </p>
+                                        <ul>
+                                            <li>
+                                                <p>
+                                                    SLA 2 x 24 jam (dalam coverage area)
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    SLA 3 x 24 jam (di luar coverage area)
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Hotline McEasy Customer Service dapat dihubungi di 081.131.6689
+                                        </p>
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">
+                                2
+                            </td>
+                            <td>
+                                Technical Maintenance
+                            </td>
+                            <td>
+                                <ol>
+                                    <li>
+                                        <p>
+                                            Maintenance dan perbaikan atas kerusakan di dalam coverage area akan dibebankan biaya service maintenance sebesar Rp 250.000  kepada customer, disertai dengan bukti secara tertulis.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Maintenance dan perbaikan atas kerusakan di luar coverage area, akan dibebankan biaya service maintenance serta biaya akomodasi terhadap customer, disertai dengan bukti secara tertulis. Biaya akomodasi akan dihitung berdasarkan hari kunjungan teknisi kepada customer.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Maintenance dilakukan sesuai dengan SOP McEasy
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Coverage area sebagaimana dimaksud adalah Jabodetabek, Kota Medan, Kota Pekanbaru, Kota Palembang, Kota Bandung, Kota Solo, Kota Semarang, Kota Jogjakarta, Kota Surabaya, Kota Malang, Kota Sidoarjo, Kota Gresik, Kabupaten Mojokerto, Kota Balikpapan, Kota Makassar.
+                                        </p>
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Technical Maintenance (Software Only)
+                            </td>
+                            <td>
+                                <ol>
+                                    <li>
+                                        <p>
+                                            McEasy tidak bertanggung jawab terhadap kerusakan hardware GPS milik pribadi customer.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Apabila ke depannya hardware customer tidak compatible dengan software McEasy, maka customer harus mengganti hardware tersebut dengan hardware baru yang compatible dengan software McEasy atau dengan menggunakan hardware McEasy
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Maintenance yang dilakukan oleh teknisi McEasy untuk pengecekan hardware GPS tanpa melakukan pergantian terhadap hardware GPS tersebut akan dibebankan biaya kepada customer sebesar Rp 250.000 / unit kendaraan.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Maintenance di luar coverage area, akan dibebankan biaya akomodasi kepada customer, disertai dengan bukti secara tertulis. Biaya akomodasi akan dihitung berdasarkan hari kunjungan teknisi kepada customer.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Coverage area sebagaimana dimaksud adalah Jabodetabek, Kota Medan, Kota Pekanbaru, Kota Palembang, Kota Bandung, Kota Solo, Kota Semarang, Kota Jogjakarta, Kota Surabaya, Kota Malang, Kota Sidoarjo, Kota Gresik, Kabupaten Mojokerto, Kota Balikpapan, Kota Makassar, Kota Denpasar.
+                                        </p>
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">
+                                3
+                            </td>
+                            <td>
+                                Installation
+                            </td>
+                            <td>
+                                <ol>
+                                    <li>
+                                        <p>
+                                            Pemasangan Unit serta Accessoriesnya dilakukan sesuai SOP McEasy
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Setiap pemasangan akan dilengkapi dengan dokumentasi lengkap yang perlu ditandatangani oleh customer baik secara langsung maupun digital
+                                        </p>
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Installation (Software Only)
+                            </td>
+                            <td>
+                                <ol>
+                                    <li>
+                                        <p>
+                                            McEasy hanya melakukan pergantian simcard pada hardware GPS milik customer.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            McEasy memastikan hardware customer dapat berfungsi dan terintegrasi dengan system McEasy.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Biaya instalasi &amp; akomodasi dihitung sesuai dengan aturan yang ada di McEasy.
+                                        </p>
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                Software Training
+                            </td>
+                            <td>
+                                <ol>
+                                    <li>
+                                        <p>
+                                            Free software training akan dilakukan oleh implementor team McEasy pada saat awal kerja sama dengan customer
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            User manual serta video akan diberikan kepada customer
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Periodic software training akan diberikan secara berkala, khususnya untuk fitur‐fitur terbaru dari software update
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Request untuk software training tambahan dapat dijadwalkan sesuai dengan jadwal implementor team McEasy
+                                        </p>
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                5
+                            </td>
+                            <td>
+                                Integration System
+                            </td>
+                            <td>
+                                <ol>
+                                    <li>
+                                        <p>
+                                            API integration dapat diakses oleh customer dengan request API token ke customer service McEasy
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            ERP / TMS integration dapat didiskusikan lebih lanjut dengan team product McEasy untuk menyesuaikan kebutuhan customer
+                                        </p>
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                6
+                            </td>
+                            <td>
+                                Software Update
+                            </td>
+                            <td>
+                                <p>McEasy melakukan software update secara berkala dan dapat dinikmati secara gratis oleh customer</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                7
+                            </td>
+                            <td>
+                                Accessories
+                            </td>
+                            <td>
+                                <ol>
+                                    <li>
+                                        <p>
+                                            Pergantian karena kerusakan product hardware akan dilakukan oleh tim technical McEasy (subscription only)
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Garansi 1 Tahun berlaku untuk pembelian product McEasy (purchase hardware)
+                                        </p>
+                                    </li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                8
+                            </td>
+                            <td>
+                                Price For Hardware
+                            </td>
+                            <td class="p-5">
+                                <table class="table table-sm text-center" id="price_component">
+                                    <thead>
+                                        <th>
+                                            No
+                                        </th>
+                                        <th>
+                                            Product Type
+                                        </th>
+                                        <th>
+                                            Price per Product (Rp)
+                                        </th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                1
+                                            </td>
+                                            <td>
+                                                GPS
+                                            </td>
+                                            <td>
+                                                1,000,000
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td>
+                                                iDoor
+                                            </td>
+                                            <td>
+                                                500,000
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                3
+                                            </td>
+                                            <td>
+                                                iTemp
+                                            </td>
+                                            <td>
+                                                500,000
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                4
+                                            </td>
+                                            <td>
+                                                iFuel Stick
+                                            </td>
+                                            <td>
+                                                2,000,000
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                5
+                                            </td>
+                                            <td>
+                                                iFuel Ultrasonic
+                                            </td>
+                                            <td>
+                                                2,800,000
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                6
+                                            </td>
+                                            <td>
+                                                iBuzzer
+                                            </td>
+                                            <td>
+                                                100,000
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                7
+                                            </td>
+                                            <td>
+                                                iCall
+                                            </td>
+                                            <td>
+                                                125,000
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                8
+                                            </td>
+                                            <td>
+                                                TrackVision Pro
+                                            </td>
+                                            <td>
+                                                3,500,000
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                9
+                                            </td>
+                                            <td>
+                                                Trackvision Basic
+                                            </td>
+                                            <td>
+                                                3,000,000
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                10
+                                            </td>
+                                            <td>
+                                                McEasy GPS Portable
+                                            </td>
+                                            <td>
+                                                1,500,000
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                11
+                                            </td>
+                                            <td>
+                                                Easy Route
+                                            </td>
+                                            <td>
+                                                5,000,000
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                12
+                                            </td>
+                                            <td>
+                                                PTO
+                                            </td>
+                                            <td>
+                                                500,000
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </field>
+        </record>
+
+    </data>
+</odoo>

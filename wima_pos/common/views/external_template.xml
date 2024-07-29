@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="external_template_view_form" model="ir.ui.view">
+            <field name="name">external_template_view_form</field>
+            <field name="model">external.template</field>
+            <field name="arch" type="xml">
+                <form string="external_template_form">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="preview_action"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-file">
+                                <span>Preview</span>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1><field name="name" class="w-100"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="model_id" required="1"/>
+                                <field name="document_format"/>
+                                <field name="description"/>
+                                <field name="model" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="is_default" />
+                                <field name="active" />
+                            </group>
+
+                        </group>
+                        <notebook>
+                            <page name="content" string="Content">
+                                <field name="content"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="external_template_view_tree" model="ir.ui.view">
+            <field name="name">external_template_view_tree</field>
+            <field name="model">external.template</field>
+            <field name="arch" type="xml">
+                <tree string="external_template_tree">
+                    <field name="name"/>
+                    <field name="model_id" />
+                    <field name="is_default" />
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="external_template_action" model="ir.actions.act_window">
+            <field name="name">Document Template</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">external.template</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="legal_menu_categ" name="Legal" parent="contacts.res_partner_menu_config"/>
+        <menuitem id="external_template_menuitem" name="Document Template" parent="legal_menu_categ" action="external_template_action" sequence="5"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_external_template,external_template,wima_pos.model_external_template,base.group_user,1,1,1,1
+access_wizard_external_template,wizard_external_template,wima_pos.model_wizard_external_template,base.group_user,1,1,1,1
+access_res_country_city,res_country_city,wima_pos.model_res_country_city,base.group_user,1,1,1,1

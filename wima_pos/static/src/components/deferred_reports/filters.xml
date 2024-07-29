@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="wima_pos.DeferredFilterComparison" t-inherit="wima_pos.AccountReportFilterComparison">
+        <xpath expr="//div[@name='filter_comparison_same_period_last_year']" position="replace"/>
+        <xpath expr="//div[@name='filter_comparison_custom']" position="replace"/>
+        <xpath expr="//div[@class='dropdown-divider'][last()]" position="replace"/>
+        <xpath expr="//div[@class='dropdown-divider'][last()]" position="replace"/>
+    </t>
+
+    <t t-name="wima_pos.DeferredFilters" t-inherit="wima_pos.AccountReportFiltersCustomizable">
+        <xpath expr="//div[@id='filter_comparison']/t" position="replace">
+            <t t-call="wima_pos.DeferredFilterComparison"/>
+        </xpath>
+    </t>
+</templates>

@@ -1,0 +1,19 @@
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: mceasy-erp-db
+spec:
+  dataFrom:
+    - extract:
+        conversionStrategy: Default
+        decodingStrategy: None
+        key: mceasy-erp-db
+        metadataPolicy: None
+  refreshInterval: 60s
+  secretStoreRef:
+    kind: SecretStore
+    name: key-vault-mceasy
+  target:
+    creationPolicy: Merge
+    deletionPolicy: Retain
+    name: mceasy-erp-db-environment

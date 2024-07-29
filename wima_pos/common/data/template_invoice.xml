@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <record model="external.template" id="template_invoice">
+            <field name="name">Template Invoice</field>
+            <field name="model_id" ref="model_account_move"/>
+            <field name="is_default">True</field>
+            <field name="content" type="html">
+                <div>
+                    <p>
+                        Pembayaran dapat dilakukan melalui transfer kepada:
+                    </p>
+                    <div class="text-center row mb-3">
+                        <div class="col-5">
+                            <p class="m-0 fw-bold">{{ object.company_id.name }}</p>
+                            {% set link = object.set_link() %}
+                            <div class="p-3">
+                                <img src="data:image/png;base64,{{ object.set_qrcode(link) }}" style="max-width: 150px;max-height: 150px"/>
+                            </div>
+                            <div class="mb-2">
+                                <a href="{{ link }}">Link Pembayaran</a>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mb-0">Harap memberikan keterangan <b>{{ object.name }}</b> ketika transfer.</p>
+                    <p class="mb-0">Setelah dilakukannya pembayaran, PIHAK KEDUA wajib mengirimkan bukti pembayaran ke email <a href='mailto:finance@mceasy.co.id'>finance@mceasy.co.id</a></p>
+                    {% if object.company_id.account_receivable_responsible.partner_id.email %}
+                    <p class="mb-0">Jika terdapat pertanyaan terkait invoice, harap menghubungi <a href="mailto:{{ object.company_id.account_receivable_responsible.partner_id.email}}">{{ object.company_id.account_receivable_responsible.partner_id.email}}</a></p>
+                    {% endif %}
+                </div>
+            </field>
+         </record>
+
+    </data>
+</odoo>

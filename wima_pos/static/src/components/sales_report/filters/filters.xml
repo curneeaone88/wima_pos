@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="wima_pos.SalesReportFilters" t-inherit="wima_pos.AccountReportFiltersCustomizable">
+        <xpath expr="//div[@id='filter_variant']" position="before">
+            <t t-call="wima_pos.SalesReportFilterCode"/>
+        </xpath>
+    </t>
+</templates>

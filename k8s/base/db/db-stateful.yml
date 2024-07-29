@@ -1,0 +1,29 @@
+kind: StatefulSet
+apiVersion: apps/v1
+metadata:
+  name: mceasy-erp-db
+spec:
+  selector:
+    matchLabels:
+      app: mceasy-erp-db
+  template:
+    metadata:
+      labels:
+        app: mceasy-erp-db
+    spec:
+      containers:
+        - name: mceasy-erp-db
+          image: postgres:14.7
+          envFrom:
+          - secretRef:
+              name: mceasy-erp-db-environment
+          env:
+            - name: PGDATA
+              value: /var/lib/postgresql/data
+          volumeMounts:
+            - name: pg-data
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: pg-data
+          persistentVolumeClaim:
+            claimName: mceasy-erp-db-pvc

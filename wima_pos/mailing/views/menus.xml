@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="mass_mailing.mass_mailing_menu_root"
+        name="Email Broadcasting"
+    />
+</odoo>

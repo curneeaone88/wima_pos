@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="mceasy_default_layout">
+        <div t-attf-class="o_company_#{company.id}_layout mc-font row header">
+            <div class="col-7 mt-3">
+                <img t-att-src="image_data_uri(company.logo)" alt="" srcset="" height="40"/>
+            </div>
+            <div class="col-5 text-end mt-3">
+                <p t-if="'parent_id' in company.fields_get() and company.parent_id" class="m-0 fw-bold" t-field="company.parent_id.name" t-att-style="'color: %s;' % company.primary_color">PT</p>
+                <p t-else="" class="m-0 fw-bold" t-field="company.name" t-att-style="'color: %s;' % company.primary_color">PT</p>
+                <span t-if="'parent_id' in company.fields_get() and company.parent_id" class="fs-6 text-muted mc-caption" t-field="company.parent_id.company_details">Indonesia</span>
+                <span t-else="" class="fs-6 text-muted mc-caption" t-field="company.company_details">Indonesia</span>
+            </div>
+        </div>
+        <div t-attf-class="article o_company_#{company.id}_layout mc-font {{  'o_report_layout_background' if company.layout_background in ['Geometric', 'Custom']  else  '' }}" t-attf-style="background-image: url({{ 'data:image/png;base64,%s' % company.layout_background_image.decode('utf-8') if company.layout_background_image and company.layout_background == 'Custom' else '/base/static/img/bg_background_template.jpg' if company.layout_background == 'Geometric' else ''}});" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-out="0"/>
+        </div>
+        <div t-attf-class="o_company_#{company.id}_layout mc-font footer o_background_footer pt-2">
+            <div class="row pt-2">
+                <div class="col-4">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr t-if="company.phone">
+                                <td class="p-0 text-muted mc-caption">Phone</td>
+                                <td class="p-0 text-muted mc-caption">:</td>
+                                <td class="p-0 text-muted mc-caption">
+                                    <span t-field="company.phone"/>
+                                </td>
+                            </tr>
+                            <tr t-if="company.email">
+                                <td class="p-0 text-muted mc-caption">Email</td>
+                                <td class="p-0 text-muted mc-caption">:</td>
+                                <td class="p-0 text-muted mc-caption">
+                                    <span t-field="company.email"/>
+                                </td>
+                            </tr>
+                            <tr t-if="company.website">
+                                <td class="p-0 text-muted mc-caption">Website</td>
+                                <td class="p-0 text-muted mc-caption">:</td>
+                                <td class="p-0 text-muted mc-caption">
+                                    <span t-field="company.website"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-4">
+                </div>
+                <div class="col-4">
+                    <div class="text-end pt-4">
+                        <div t-if="report_type == 'pdf'" class="text-muted mc-caption">
+                            Page:
+                            <span class="page"/>
+                            of
+                            <span class="topage"/>
+                        </div>
+                        <div t-if="report_type == 'pdf' and display_name_in_footer" class="text-muted">
+                            <span t-out="o.name">(document name)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

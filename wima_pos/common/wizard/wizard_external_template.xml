@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="wizard_external_template_view_form" model="ir.ui.view">
+            <field name="name">wizard_external_template_view_form</field>
+            <field name="model">wizard.external.template</field>
+            <field name="arch" type="xml">
+                <form string="wizard_external_template_form">
+                    <sheet>
+                        <group>
+                            <field name="external_template_id" />
+                            <field name="resource_ref"/>
+                        </group>
+                        <group>
+                            <field name="preview_template" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

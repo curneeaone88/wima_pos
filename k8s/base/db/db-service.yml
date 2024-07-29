@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mceasy-erp-db
+spec:
+  selector:
+    app: mceasy-erp-db
+  ports:
+  - port: 5432
+    targetPort: 5432
+    protocol: TCP

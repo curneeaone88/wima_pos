@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mceasy-erp
+spec:
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: mceasy-erp
+  template:
+    metadata:
+      labels:
+        app: mceasy-erp
+    spec:
+      containers:
+      - name: mceasy-erp
+        image: mceasy-erp
+        volumeMounts:
+        - mountPath: /etc/odoo/odoo.conf
+          subPath: odoo.conf
+          name: config
+        - mountPath: /var/lib/odoo/filestore
+          subPath: filestore
+          name: mceasy-erp-data
+        - mountPath: /var/lib/odoo/sessions
+          subPath: sessions
+          name: mceasy-erp-data
+      volumes:
+      - name: config
+        secret:
+          secretName: mceasy-erp-config
+      - name: mceasy-erp-data
+        persistentVolumeClaim:
+          claimName: mceasy-erp-pvc

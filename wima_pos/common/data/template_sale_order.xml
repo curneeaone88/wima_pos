@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <record model="external.template" id="template_sale_order">
+            <field name="name">Template Sale Order</field>
+            <field name="model_id" ref="model_sale_order"/>
+            <field name="is_default">True</field>
+            <field name="content" type="html">
+                <div>
+                    <h5 class="fw-bold">Notes:</h5>
+                    <ol>
+                        <li>
+                            <p class="mb-0">
+                                PIHAK KEDUA melakukan pembayaran sejumlah nilai diatas setelah penandatanganan PERJANJIAN. Pemasangan PRODUK oleh PIHAK PERTAMA akan dilakukan 5 (lima) hari setelah dilakukan pembayaran oleh PIHAK KEDUA.
+                            </p>
+                        </li>
+                        <li>
+                            <p class="mb-0">
+                                Nilai nominal pembayaran di atas sudah termasuk PPN.
+                            </p>
+                        </li>
+                        <li>
+                            <p class="mb-0">
+                                Masa aktif PRODUK terhitung sejak tanggal pemasangan sampai dengan JANGKA WAKTU
+                            </p>
+                        </li>
+                        <li>
+                            <p class="mb-0">
+                                Apabila pada tanggal jatuh tempo tidak terjadi pembayaran, maka:
+                            </p>
+                            <ol>
+                                <li>
+                                    <p class="mb-0">
+                                        30 (tiga puluh) hari sejak tanggal jatuh tempo, akses ke sistem akan ditutup
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="mb-0">
+                                        60 (enam puluh) hari sejak tanggal jatuh tempo, layanan akan ditutup
+                                    </p>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <div class="mb-3">
+                                <p>
+                                    Pembayaran dapat dilakukan melalui transfer kepada:
+                                </p>
+                                <div class="text-center row">
+                                    <div class="col-5">
+                                        <p class="m-0 fw-bold">{{ object.company_id.name }}</p>
+                                        {% set link = object.set_link() %}
+                                        <div class="p-3">
+                                            <img src="data:image/png;base64,{{ object.set_qrcode(link) }}" style="max-width: 150px;max-height: 150px"/>
+                                        </div>
+                                        <div class="mb-2">
+                                            <a href="{{ link }}">Link Pembayaran</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="mb-0">Harap memberikan keterangan <b>{{ object.name }}</b> ketika transfer.</p>
+                        </li>
+                        <li>
+                            <p class="mb-0">Setelah dilakukannya pembayaran, PIHAK KEDUA wajib mengirimkan bukti pembayaran ke email <a href='mailto:finance@mceasy.co.id'>finance@mceasy.co.id</a></p>
+                        </li>
+                        {% if object.company_id.account_receivable_responsible.partner_id.email %}
+                        <li>
+                            <p class="mb-0">Jika terdapat pertanyaan terkait invoice, harap menghubungi <a href="mailto:{{ object.company_id.account_receivable_responsible.partner_id.email}}">{{ object.company_id.account_receivable_responsible.partner_id.email}}</a></p>
+                        </li>
+                        {% endif %}
+                    </ol>
+                </div>
+            </field>
+         </record>
+
+    </data>
+</odoo>

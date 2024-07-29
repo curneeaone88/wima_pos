@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="external.template" id="template_quotation">
+            <field name="name">Template Quotation</field>
+            <field name="model_id" ref="model_sale_quotation"/>
+            <field name="is_default">True</field>
+            <field name="content" type="html">
+                <h4 style="color: {{object.company_id.primary_color}}">
+                    Terms &amp; Conditions:
+                </h4>
+                <ol>
+                    <li>
+                        <p class="m-0">
+                            Pembayaran penawaran untuk item yang diatas sebagai berikut :
+                        </p>
+                        <ol class="list-lower-alpha">
+                            <li>
+                                <p class="m-0">
+                                    Pengajuan penawaran harga pada quotation ini untuk masa kontrak selama 12 Bulan
+                                </p>
+                            </li>
+                            <li>
+                                <p class="m-0">
+                                    Untuk pemasangan di luar Jabodetabek dan Surabaya, disediakan minimum 5 unit untuk masing-masing penjadwalan pasang.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="m-0">
+                                    Untuk pemasangan GPS yang dilakukan sendiri oleh customer, jika ada masalah pada kendaraan setelah pemasangan dilakukan maka hal tersebut sudah diluar tanggung jawab McEasy.
+                                </p>
+                            </li>
+                        </ol>
+                    </li>
+                    {% if object.partner_id.contract_id %}
+                    <li>
+                        <p class="m-0">
+                            Quotation ini menjadi satu kesatuan dengan Perjanjian Nomor <b>{{ object.partner_id.contract_id.name }}</b> yang tidak dapat dipisahkan dan dalam pelaksanaannya tidak dapat berdiri sendiri.
+                        </p>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <p class="m-0">
+                            Spesifikasi dan fitur GPS McEasy sesuai dengan Proposal Penawaran
+                        </p>
+                    </li>
+                    <li>
+                        <p class="m-0">
+                            Support Coverage Area: Jawa
+                        </p>
+                        <ol class="list-lower-alpha">
+                            <li>
+                                <p class="m-0">
+                                    Biaya Service dan Maintenance unit GPS Hardware, Software, Kartu SIM, dan Biaya Transportasi sudah termasuk untuk Support Coverage Area
+                                </p>
+                            </li>
+                            <li>
+                                <p class="m-0">
+                                    Untuk diluar Support Coverage Area dikenakan biaya pemasangan sebesar Rp 250.000 /Unit. Biaya Transportasi dan Akomodasi akan dibebankan sepenuhnya ke customer.
+                                </p>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <p class="m-0">
+                            Biaya pemindahan GPS dikenakan biaya sebesar Rp 150.000 /Unit dan pemindahan Sensor sebesar Rp 200.000 /unit (dalam Support Coverage Area)
+                        </p>
+                    </li>
+                    <li>
+                        <p class="m-0">
+                            Jadwal kunjungan pemasangan:
+                        </p>
+                        <ol class="list-lower-alpha">
+                            <li>
+                                <p class="m-0">
+                                    Permintaan perubahan jadwal kunjungan hanya diperkenankan 1 kali selama proses penjadwalan yaitu H-2
+                                </p>
+                            </li>
+                            <li>
+                                <p class="m-0">
+                                    Apabila permintaan perubahan jadwal kunjungan terjadi kurang dari H-2, akan dikenakan denda sebesar Rp 50.000
+                                </p>
+                            </li>
+                            <li>
+                                <p class="m-0">
+                                    Apabila jumlah realisasi pemasangan unit kurang dari yang dijadwalkan, maka akan dikenakan denda per selisih unit yang tidak terpasang masing-masing sebesar Rp 50.000 (dalam Support Coverage Area) dan Rp 250.000 (di luar Support Coverage Area)
+                                </p>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <p class="m-0">
+                            Segala kerusakan dan/atau kehilangan pada unit terpasang baik disengaja maupun tidak disengaja, customer akan dibebankan  biaya  penggantian  kerugian  sebesar  Rp  1.000.000 per unit.
+                        </p>
+                    </li>
+                    <li>
+                        <p class="m-0">
+                            Apabila customer berkeinginan untuk berhenti berlangganan sebelum periode langganan berakhir, customer akan dikenakan denda  pengakhiran  yang  perhitungannya  akan dilakukan dengan mempertimbangkan sisa periode berlangganan.
+                        </p>
+                    </li>
+                    <li>
+                        <p class="m-0">
+                            Untuk penagihan selanjutnya, apabila pada tanggal jatuh tempo tagihan tidak terjadi pembayaran, maka:
+                        </p>
+                        <ol class="list-lower-alpha">
+                            <li>
+                                <p class="m-0">
+                                    30 hari sejak tanggal jatuh tempo, akses customer ke sistem akan diblokir.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="m-0">
+                                    60 hari sejak tanggal jatuh tempo, layanan akan ditutup.
+                                </p>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+                <h4 style="color: {{object.company_id.primary_color}}">THANK YOU FOR YOUR BUSINESS!</h4>
+            </field>
+        </record>
+    </data>
+</odoo>

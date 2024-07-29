@@ -1,0 +1,31 @@
+bases:
+  - ../../base
+
+namespace: erp-release
+
+patches:
+- target:
+    kind: Deployment
+    name: mceasy-erp
+  patch: |-
+    - op: add
+      path: /spec/template/spec/nodeSelector
+      value: 
+        node-label: erp-dev-release
+    - op: add
+      path: /spec/template/spec/tolerations
+      value:
+      - key: "erp-dev-release"
+        operator: "Equal"
+        value: "true"
+        effect: "NoSchedule"
+      - key: "node-role.kubernetes.io/control-plane"
+        operator: "Exists"
+        effect: "NoSchedule"
+- target:
+    kind: PersistentVolumeClaim
+    name: mceasy-erp-pvc
+  patch: |-
+    - op: replace
+      path: /spec/storageClassName
+      value: gp3-az

@@ -1,0 +1,100 @@
+name: Kubernetes Automated Deployment
+
+on:
+  release:
+    types: [prereleased, released]
+  push:
+    branches:
+      - master
+
+jobs:
+  environment-check:
+    runs-on: [aws-arc-runner]
+    outputs:
+      ENVIRONMENT: ${{ steps.development_env.outputs.ENVIRONMENT || steps.release_check.outputs.ENVIRONMENT || steps.production_check.outputs.ENVIRONMENT }}
+      TAG_VERSION: ${{ steps.development_env.outputs.TAG_VERSION || steps.release_check.outputs.TAG_VERSION || steps.production_check.outputs.TAG_VERSION }}
+    steps:
+      - uses: octokit/graphql-action@v2.x
+        id: get_release
+        with:
+          query: |
+            query release($owner: String!, $repo: String!) {
+              repository(owner: $owner, name: $repo) {
+                releases(first: 1) {
+                  nodes {
+                    isPrerelease
+                  }
+                }
+              }
+            }
+          variables: |
+            owner: ${{ github.repository_owner }}
+            repo: ${{ github.event.repository.name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: "Set as production environment"
+        if: ${{ github.ref_type == 'tag' && !fromJSON(steps.get_release.outputs.data).repository.releases.nodes[0].isPrerelease }}
+        id: production_check
+        run: |
+          echo ENVIRONMENT=production >> $GITHUB_OUTPUT
+          echo TAG_VERSION=stable >> $GITHUB_OUTPUT
+      - name: "Set as release environment"
+        if: ${{ github.ref_type == 'tag' && fromJSON(steps.get_release.outputs.data).repository.releases.nodes[0].isPrerelease }}
+        id: release_check
+        run: |
+          echo ENVIRONMENT=release >> $GITHUB_OUTPUT
+          echo TAG_VERSION=beta >> $GITHUB_OUTPUT
+      - name: "Set as development environment"
+        id: development_env
+        if: github.ref_type == 'branch'
+        run: |
+          echo ENVIRONMENT=development >> $GITHUB_OUTPUT
+          echo TAG_VERSION=latest >> $GITHUB_OUTPUT
+  build:
+    needs: environment-check
+    runs-on: [aws-arc-runner]
+    outputs:
+      CONTAINER_IMAGE: ${{ steps.image_creation.outputs.CONTAINER_IMAGE }}
+      REPO_NAME: ${{ steps.image_creation.outputs.REPO_NAME }}
+    steps:
+      - name: "Set environment"
+        run: |
+          echo TAG_NAME=registry.container-registry/$(echo $GITHUB_REPOSITORY | sed -e "s/$GITHUB_REPOSITORY_OWNER\///"):${{ needs.environment-check.outputs.TAG_VERSION }} >> $GITHUB_ENV
+          echo REPO_NAME=$(echo $GITHUB_REPOSITORY | sed -e "s/$GITHUB_REPOSITORY_OWNER\///") >> $GITHUB_ENV
+      - uses: actions/checkout@v3
+      - name: Login to Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: registry.container-registry
+          username: k8s-mceasy
+          password: ${{ secrets.HUB_MCEASY_PASSWORD }}
+      - name: "Build -> Push -> Digest image"
+        id: image_creation
+        run: |
+          docker build . -t $TAG_NAME
+          docker push $TAG_NAME
+          echo CONTAINER_IMAGE=registry.mceasy.com/$REPO_NAME@sha256:$(docker inspect --format='{{range $tag := .RepoDigests}}{{index (split $tag ":") 1}}{{end}}' $TAG_NAME) >> $GITHUB_OUTPUT
+          echo REPO_NAME=$REPO_NAME >> $GITHUB_OUTPUT
+  deploy:
+    needs: [environment-check, build]
+    runs-on: [aws-arc-runner]
+    steps:
+      - name: "Set environment"
+        run: |
+          echo REPO_NAME=${{ needs.build.outputs.REPO_NAME }} >> $GITHUB_ENV
+          echo CONTAINER_IMAGE=${{ needs.build.outputs.CONTAINER_IMAGE }} >> $GITHUB_ENV
+          echo ENVIRONMENT=${{ needs.environment-check.outputs.ENVIRONMENT }} >> $GITHUB_ENV
+      - uses: actions/checkout@v3
+        with:
+          sparse-checkout: |
+            k8s
+      - uses: imranismail/setup-kustomize@v2
+      - run: |
+          cd k8s/overlays/$ENVIRONMENT
+          kustomize edit set image $REPO_NAME=$CONTAINER_IMAGE
+      - uses: tale/kubectl-action@v1
+        with:
+          base64-kube-config: ${{ secrets.K8S_AWS_ACTION_RUNNER }}
+      - run: |
+          cd k8s/overlays/$ENVIRONMENT
+          kubectl apply -k .

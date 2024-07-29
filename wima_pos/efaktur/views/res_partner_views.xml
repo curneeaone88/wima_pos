@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_tax_form_view" model="ir.ui.view">
+            <field name="name">res.partner.tax.form.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="vat" position="after">
+                    <field name="l10n_id_pkp" invisible="country_id and country_code != 'ID'"/>
+                </field>
+                <xpath expr="//field[@name='vat']/parent::node()" position="after">
+                    <field name="l10n_id_kode_transaksi" invisible="not l10n_id_pkp"/>
+                    <field name="l10n_id_nik" invisible="not l10n_id_pkp"/>
+                    <field name="l10n_id_tax_name" invisible="not l10n_id_pkp"/>
+                    <field name="l10n_id_tax_address" invisible="not l10n_id_pkp"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

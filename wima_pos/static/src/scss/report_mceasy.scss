@@ -1,0 +1,39 @@
+$mc-grey: #E7ebec !default;
+
+.mc-font {
+    font-family: sans-serif !important;
+    color: #212529;
+}
+
+.mc-text-white {
+    color: $mc-grey;
+}
+.mc-caption {
+    font-size: 0.62rem !important;
+}
+
+span[name="order_note"] {
+    font-size: 0.60rem !important;
+}
+
+span[name="order_note"] h1,
+span[name="order_note"] h2,
+span[name="order_note"] h3,
+span[name="order_note"] h4,
+span[name="order_note"] h5 {
+    font-size: 0.7rem !important;
+    font-weight: 700;
+}
+
+.page-break {
+    page-break-before: always;
+}
+.two-column-layout{
+    display:grid;
+    grid-template-columns : 50% 50%;
+    grid-gap:20px;
+}
+
+.list-lower-alpha li {
+    list-style-type: lower-alpha;
+}
